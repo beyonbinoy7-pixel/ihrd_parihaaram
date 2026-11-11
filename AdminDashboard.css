@@ -1,0 +1,240 @@
+.admin-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 80px 0 50px;
+}
+
+.admin-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #A7F3D0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.admin-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.admin-officer {
+  font-size: 13px;
+  color: #E2E8F0;
+}
+
+.admin-officer strong {
+  color: #fff;
+}
+
+.admin-header__actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Stats Grid */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+@media (max-width: 900px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.admin-stat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.admin-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #A7F3D0;
+  margin-top: 4px;
+}
+
+/* Controls */
+.admin-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.admin-search-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Table items */
+.admin-cid {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.admin-cid:hover {
+  text-decoration: underline;
+}
+
+.admin-title-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-title-txt {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.admin-loc-txt {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.admin-cat-pill {
+  font-size: 11px;
+  background: var(--bg-alt);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  color: var(--text-secondary);
+}
+
+.priority-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.priority-urgent {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.priority-high {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.priority-medium {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.priority-low {
+  background: #F1F5F9;
+  color: #64748B;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 540px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modal-close-btn:hover {
+  color: var(--text);
+}
+
+.modal-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}

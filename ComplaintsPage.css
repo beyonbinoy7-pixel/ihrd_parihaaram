@@ -1,0 +1,66 @@
+.complaints-page__search-wrap {
+  width: 340px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box__icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-box__input {
+  width: 100%;
+  padding: 10px 36px 10px 38px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.search-box__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(27,67,50,0.08);
+}
+
+.search-box__clear {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.search-box__clear:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+.complaints-page__filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .complaints-page__search-wrap {
+    width: 100%;
+  }
+  .page-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

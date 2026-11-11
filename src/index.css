@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg-primary: #080d19;
+  --bg-secondary: #101a2c;
+  --surface-card: #162238;
+  --surface-elevated: #1e2d46;
+  --accent-cobalt: #527bff;
+  --accent-cyan: #75c9ff;
+  --text-primary: #f4f7fc;
+  --text-secondary: #a5b2c7;
+  --border-default: #2a3a53;
+  --highlight-gold: #e8bd72;
+  --status-reported: #527bff;
+  --status-in-progress: #a78bfa;
+  --status-awaiting: #f5b942;
+  --status-resolved: #42c7e8;
+  --status-critical: #ff626f;
+  --status-reopened: #ff9955;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; background: var(--bg-primary); }
+body { min-width: 320px; margin: 0; background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+:focus-visible { outline: 2px solid #2d6b9e; outline-offset: 3px; }
+::selection { background: #cad8e8; color: #1c2735; }
+
+/* Consistent light institutional surfaces for shared utility classes. */
+.bg-white { background-color: var(--surface-card) !important; }
+.text-white { color: #fff !important; }
+.text-black { color: #1c2735 !important; }
+.text-slate-50, .text-stone-50, .text-zinc-50, .text-slate-100, .text-stone-100, .text-zinc-100 { color: #e7edf5; }
+.text-slate-200, .text-stone-200, .text-zinc-200 { color: #a5b2c7; }
+.text-slate-300, .text-stone-300, .text-zinc-300 { color: #d3ddeb; }
+.text-slate-400, .text-stone-400, .text-zinc-400 { color: #8796ad; }
+.text-slate-500, .text-stone-500, .text-zinc-500 { color: var(--text-secondary); }
+.text-slate-600, .text-stone-600, .text-zinc-600 { color: #bdc8d8; }
+.text-slate-700, .text-stone-700, .text-zinc-700 { color: #d3ddeb; }
+.text-slate-800, .text-stone-800, .text-zinc-800, .text-slate-900, .text-stone-900, .text-zinc-900, .text-slate-950, .text-stone-950, .text-zinc-950 { color: var(--text-primary); }
+.bg-slate-50, .bg-stone-50, .bg-zinc-50 { background-color: var(--bg-primary); }
+.bg-slate-100, .bg-stone-100, .bg-zinc-100 { background-color: var(--surface-card); }
+.bg-slate-900, .bg-stone-900, .bg-zinc-900, .bg-slate-950, .bg-stone-950, .bg-zinc-950 { background-color: var(--bg-secondary); }
+.bg-slate-800, .bg-stone-800, .bg-zinc-800, .bg-slate-700, .bg-stone-700, .bg-zinc-700 { background-color: var(--surface-card); }
+.border-slate-200, .border-slate-300, .border-slate-700, .border-slate-800, .border-stone-100, .border-stone-200, .border-stone-300, .border-stone-700, .border-stone-800, .border-zinc-200, .border-zinc-300, .border-zinc-700, .border-zinc-800 { border-color: var(--border-default); }
+.bg-accent { background-color: var(--accent-cobalt); }
+.text-accent { color: var(--accent-cyan); }
+.border-accent { border-color: var(--accent-cobalt); }
+.admin-nav-scroll { scrollbar-color: var(--border-default) transparent; scrollbar-width: thin; }
+.status-badge { display: inline-flex; align-items: center; gap: .375rem; border: 1px solid; border-radius: 9999px; font-weight: 700; line-height: 1.25; }
+.status-badge--reported { color: #90a9ff; background: #15264b; border-color: #263d70; }
+.status-badge--in-progress { color: #c4b5fd; background: #30254f; border-color: #483770; }
+.status-badge--awaiting { color: #f8cb6a; background: #473719; border-color: #6b5224; }
+.status-badge--resolved { color: #73d5ed; background: #163849; border-color: #23536a; }
+.status-badge--critical { color: #ff8992; background: #4b232e; border-color: #71323f; }
+.status-badge--reopened { color: #ffb17c; background: #4a2d1e; border-color: #70452d; }
+.status-badge--neutral { color: var(--text-secondary); background: var(--bg-secondary); border-color: var(--border-default); }
+.app-loading { min-height: 100vh; display: grid; place-items: center; color: #647184; }
+.home-student-login { background: #f8fafc !important; color: #172235 !important; }
+.home-student-login:hover { background: #e7edf5 !important; }
+
+.pari-chatbot { position: fixed; z-index: 1000; right: 24px; bottom: 24px; font-family: inherit; }
+.pari-chat-launcher { width: 58px; height: 58px; border: 0; border-radius: 50%; color: #fff; background: #203e63; box-shadow: 0 8px 24px #172c4633; display: grid; place-items: center; cursor: pointer; transition: transform .18s, background .18s; }
+.pari-chat-launcher:hover { transform: translateY(-2px); background: #2b527d; }
+.pari-chat-launcher svg { width: 25px; height: 25px; }
+.pari-chat-window { position: absolute; right: 0; bottom: 72px; width: min(390px, calc(100vw - 32px)); height: min(570px, calc(100vh - 120px)); display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #dce2e9; border-radius: 18px; box-shadow: 0 18px 55px #172c4626; }
+.pari-chat-window.is-minimized { height: auto; }
+.pari-chat-window.is-minimized .pari-chat-header { border-bottom: 0; }
+.pari-chat-header { display: flex; align-items: center; gap: 10px; padding: 14px; background: #203e63; color: white; }
+.pari-chat-header > span:nth-child(2) { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 3px; }
+.pari-chat-header strong { font-size: 11px; letter-spacing: .07em; }
+.pari-chat-header small { font-size: 11px; color: #d5dfeb; }
+.pari-chat-header button { display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 7px; color: white; background: transparent; cursor: pointer; }
+.pari-chat-header button:hover { background: #ffffff24; }
+.pari-chat-avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; background: #ffffff1f; }
+.pari-chat-messages { flex: 1; overflow-y: auto; padding: 18px 14px; background: #f7f8fa; }
+.pari-chat-message { display: flex; margin: 0 0 12px; }
+.pari-chat-message.user { justify-content: flex-end; }
+.pari-chat-bubble { max-width: 86%; padding: 11px 12px; border: 1px solid #e0e5eb; border-radius: 13px 13px 13px 4px; background: white; color: #283546; font-size: 13px; line-height: 1.5; white-space: pre-wrap; }
+.pari-chat-message.user .pari-chat-bubble { border-color: #d8e2ed; border-radius: 13px 13px 4px 13px; background: #eaf0f6; }
+.pari-chat-bubble small { display: block; margin-top: 5px; color: #8793a2; font-size: 10px; }
+.pari-chat-typing { padding: 0 14px 10px; color: #718096; font-size: 12px; background: #f7f8fa; }
+.pari-chat-suggestions { display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 14px; border-top: 1px solid #edf0f3; }
+.pari-chat-suggestions button { padding: 7px 9px; border: 1px solid #dce2e9; border-radius: 999px; background: white; color: #38526f; font-size: 11px; cursor: pointer; }
+.pari-chat-suggestions button:hover { background: #edf3f8; }
+.pari-chat-form { display: flex; align-items: center; gap: 8px; padding: 11px 12px; border-top: 1px solid #e5e9ee; background: white; }
+.pari-chat-form input { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid #dce2e9; border-radius: 10px; outline: none; color: #283546; font: inherit; font-size: 13px; }
+.pari-chat-form input:focus { border-color: #6684a5; box-shadow: 0 0 0 3px #6684a51f; }
+.pari-chat-form button { display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 10px; background: #203e63; color: white; cursor: pointer; }
+.pari-chat-form button:disabled { background: #b8c1cb; cursor: not-allowed; }
+
+@media (max-width: 520px) { .pari-chatbot { right: 14px; bottom: 14px; } .pari-chat-window { right: -4px; bottom: 68px; width: calc(100vw - 20px); height: min(620px, calc(100dvh - 100px)); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

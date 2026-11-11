@@ -1,0 +1,287 @@
+.colleges-hero {
+  background: var(--accent);
+  color: #fff;
+  padding: 80px 0 60px;
+}
+
+.colleges-hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 10px 0 6px;
+  color: #fff;
+}
+
+.colleges-hero__ml {
+  font-size: 16px;
+  color: #A7F3D0;
+  margin-bottom: 16px;
+}
+
+.colleges-hero__desc {
+  max-width: 760px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #E2E8F0;
+  margin-bottom: var(--space-8);
+}
+
+.colleges-stat-bar {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 16px 28px;
+  gap: 32px;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 680px) {
+  .colleges-stat-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+  .c-stat-divider {
+    display: none;
+  }
+}
+
+.c-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-stat-val {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.c-stat-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #A7F3D0;
+  margin-top: 4px;
+}
+
+.c-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Filter bar */
+.colleges-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.colleges-search {
+  width: 380px;
+}
+
+@media (max-width: 768px) {
+  .colleges-search {
+    width: 100%;
+  }
+}
+
+/* Grid */
+.colleges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-20);
+}
+
+@media (max-width: 1024px) {
+  .colleges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .colleges-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.college-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+}
+
+.college-card:hover {
+  border-color: var(--accent-mid);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.college-card__image-wrap {
+  position: relative;
+  height: 140px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  background: var(--bg-alt);
+}
+
+.college-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.college-card:hover .college-card__image {
+  transform: scale(1.05);
+}
+
+.college-card__image-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(27, 67, 50, 0.9);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.college-established-pill {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.college-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.college-card__code-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.college-code-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 4px;
+}
+
+.college-rank-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.college-district-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.college-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.college-card__name-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.college-card__name-link:hover {
+  color: var(--accent);
+}
+
+.college-card__loc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.college-card__progress {
+  margin-bottom: var(--space-4);
+}
+
+.college-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.college-progress-label {
+  color: var(--text-secondary);
+}
+
+.college-progress-val {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.college-card__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: var(--space-4);
+}
+
+.c-card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.c-card-stat__val {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.c-card-stat__lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.college-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
